@@ -1,5 +1,5 @@
 {
-	"name": "crowcg/upmembership-project",
+	"name": "crowdcg/upmembership-project",
 	"description": "This is our project template for UpMembership.",
 	"type": "project",
 	"license": "GPL-2.0+",
@@ -20,7 +20,7 @@
         	"composer/installers": "^1.0",
         	"drupal-composer/drupal-scaffold": "^2.0.0",
         	"cweagans/composer-patches": "1.5.0",
-        	"crowcg/upmembership": "^8.1.0"
+        	"crowdcg/upmembership": "^8.1.0"
     	},
     	"repositories": [
         	{
