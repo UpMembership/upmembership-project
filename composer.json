@@ -3,6 +3,7 @@
 	"description": "This is our project template for UpMembership.",
 	"type": "project",
 	"license": "GPL-2.0+",
+	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"require-dev": {
         	"behat/behat": "^3.1",
