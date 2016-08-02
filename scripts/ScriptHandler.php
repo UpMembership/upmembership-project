@@ -15,9 +15,9 @@ class ScriptHandler {
     $fs = new Filesystem();
     $root = static::getDrupalRoot(getcwd());
     $dirs = [
-        'modules',
-        'profiles',
-        'themes',
+      'modules',
+      'profiles',
+      'themes',
     ];
     // Required for unit testing
     foreach ($dirs as $dir) {

@@ -35,27 +35,28 @@
 		]
 	},
 	"scripts": {
-		"post-install-cmd": [
-			"DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-			"CrowdCG\\UpMembership\\ScriptHandler::deployLibraries"
-		],
-		"post-update-cmd": [
-			"DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-			"CrowdCG\\UpMembership\\ScriptHandler::deployLibraries"
-		]
-	},
-	"config": {
-		"bin-dir": "bin/"
-	},
+        	"drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        	"pre-install-cmd": [
+            		"CrowCG\\UpMembership\\ScriptHandler::checkComposerVersion"
+        	],
+        	"pre-update-cmd": [
+            		"CrowCG\\UpMembership\\ScriptHandler::checkComposerVersion"
+        	],
+        	"post-install-cmd": [
+        	    	"CrowCG\\UpMembership\\ScriptHandler::createRequiredFiles"
+        	],
+        	"post-update-cmd": [
+            		"CrowCG\\UpMembership\\ScriptHandler::createRequiredFiles"
+        	]
+    	},
     	"extra": {
         	"installer-paths": {
-            		"docroot/core": ["type:drupal-core"],
-            		"docroot/libraries/{$name}": ["type:drupal-library"],
-            		"docroot/modules/contrib/{$name}": ["type:drupal-module"],
-            		"docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
-            		"docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+            		"web/core": ["type:drupal-core"],
+            		"web/libraries/{$name}": ["type:drupal-library"],
+            		"web/modules/contrib/{$name}": ["type:drupal-module"],
+            		"web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            		"web/themes/contrib/{$name}": ["type:drupal-theme"],
             		"drush/contrib/{$name}": ["type:drupal-drush"]
-        	},
-			"enable-patching": true
+        	}
     	}
 }
