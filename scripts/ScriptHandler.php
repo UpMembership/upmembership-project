@@ -1,24 +1,32 @@
 <?php
+
 /**
  * @file
  * Contains \UpMembership-Project\ScriptHandler.
  */
+
 namespace CrowCG\UpMembership;
+
 use Composer\Script\Event;
 use Composer\Semver\Comparator;
 use Symfony\Component\Filesystem\Filesystem;
+
 class ScriptHandler {
+
   protected static function getDrupalRoot($project_root) {
     return $project_root . '/web';
   }
+
   public static function createRequiredFiles(Event $event) {
     $fs = new Filesystem();
     $root = static::getDrupalRoot(getcwd());
+
     $dirs = [
       'modules',
       'profiles',
       'themes',
     ];
+
     // Required for unit testing
     foreach ($dirs as $dir) {
       if (!$fs->exists($root . '/'. $dir)) {
@@ -26,18 +34,21 @@ class ScriptHandler {
         $fs->touch($root . '/'. $dir . '/.gitkeep');
       }
     }
+
     // Prepare the settings file for installation
     if (!$fs->exists($root . '/sites/default/settings.php') and $fs->exists($root . '/sites/default/default.settings.php')) {
       $fs->copy($root . '/sites/default/default.settings.php', $root . '/sites/default/settings.php');
       $fs->chmod($root . '/sites/default/settings.php', 0666);
       $event->getIO()->write("Create a sites/default/settings.php file with chmod 0666");
     }
+
     // Prepare the services file for installation
     if (!$fs->exists($root . '/sites/default/services.yml') and $fs->exists($root . '/sites/default/default.services.yml')) {
       $fs->copy($root . '/sites/default/default.services.yml', $root . '/sites/default/services.yml');
       $fs->chmod($root . '/sites/default/services.yml', 0666);
       $event->getIO()->write("Create a sites/default/services.yml file with chmod 0666");
     }
+
     // Create the files directory with chmod 0777
     if (!$fs->exists($root . '/sites/default/files')) {
       $oldmask = umask(0);
@@ -46,6 +57,7 @@ class ScriptHandler {
       $event->getIO()->write("Create a sites/default/files directory with chmod 0777");
     }
   }
+
   /**
    * Checks if the installed version of Composer is compatible.
    *
@@ -63,7 +75,9 @@ class ScriptHandler {
   public static function checkComposerVersion(Event $event) {
     $composer = $event->getComposer();
     $io = $event->getIO();
+
     $version = $composer::VERSION;
+
     // If Composer is installed through git we have no easy way to determine if
     // it is new enough, just display a warning.
     if ($version === '@package_version@') {
@@ -74,4 +88,5 @@ class ScriptHandler {
       exit(1);
     }
   }
+
 }
