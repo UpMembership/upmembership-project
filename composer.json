@@ -26,7 +26,7 @@
     	"repositories": [
 			{
 					"type": "git",
-					"url": "https://github.com/gjedeer/celery-php"
+					"url": "https://github.com/UpMembership/upmembership.git"
         	}
     	],
 	"autoload": {
