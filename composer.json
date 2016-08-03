@@ -21,7 +21,7 @@
         	"composer/installers": "^1.0",
         	"drupal-composer/drupal-scaffold": "^2.0.0",
         	"cweagans/composer-patches": "1.5.0",
-        	"crowdcg/upmembership": "*-alpha"
+        	"crowdcg/upmembership": "dev-alpha"
     	},
     	"repositories": [
         	{
