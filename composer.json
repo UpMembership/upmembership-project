@@ -24,11 +24,13 @@
         	"crowdcg/upmembership": "dev-alpha"
     	},
     	"repositories": [
-        	{
-            		"type": "composer",
-            		"url": "https://packagist.drupal-composer.org",
-					"type": "git",
-					"url": "https://github.com/UpMembership/upmembership.git"
+			{
+				"type": "composer",
+				"url": "https://packagist.drupal-composer.org"
+			},
+			{
+				"type": "composer",
+				"url": "https://github.com/UpMembership/upmembership.git"
         	}
     	],
 	"autoload": {
