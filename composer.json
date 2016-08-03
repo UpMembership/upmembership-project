@@ -21,12 +21,14 @@
         	"composer/installers": "^1.0",
         	"drupal-composer/drupal-scaffold": "^2.0.0",
         	"cweagans/composer-patches": "1.5.0",
-        	"crowdcg/upmembership": "*"
+        	"crowdcg/upmembership": "*-alpha"
     	},
     	"repositories": [
         	{
             		"type": "composer",
-            		"url": "https://packagist.drupal-composer.org"
+            		"url": "https://packagist.drupal-composer.org",
+					"type": "git",
+					"url": "https://github.com/gjedeer/celery-php"
         	}
     	],
 	"autoload": {
