@@ -5,7 +5,7 @@
  * Contains \UpMembership-Project\ScriptHandler.
  */
 
-namespace CrowCG\UpMembership;
+namespace CrowdCG\UpMembership;
 
 use Composer\Script\Event;
 use Composer\Semver\Comparator;
