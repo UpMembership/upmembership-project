@@ -7,7 +7,7 @@
 	"prefer-stable": true,
 	"require-dev": {
         	"behat/behat": "^3.1",
-        	"drupal/drupal-extension": "^3.1",
+        	//"drupal/drupal-extension": "^3.1",
         	"behat/mink": "~1.6",
         	"behat/mink-goutte-driver": "~1.2",
         	"jcalderonzumba/gastonjs": "~1.0.2",
@@ -19,14 +19,12 @@
     	},
 	"require": {
         	"composer/installers": "^1.0",
-        	"drupal-composer/drupal-scaffold": "^2.0.0",
+        	//"drupal-composer/drupal-scaffold": "^2.0.0",
         	"cweagans/composer-patches": "1.5.0",
         	"crowdcg/upmembership": "dev-alpha"
     	},
     	"repositories": [
-        	{
-            		"type": "composer",
-            		"url": "https://packagist.drupal-composer.org",
+			{
 					"type": "git",
 					"url": "https://github.com/gjedeer/celery-php"
         	}
